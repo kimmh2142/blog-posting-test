@@ -1,11 +1,11 @@
 from gensim.summarization.summarizer import summarize
 from newspaper import Article
 
-url ='https://n.news.naver.com/mnews/article/014/0004967918?sid=101'
+url ='https://www.mk.co.kr/news/world/10659926'
 news = Article(url)
 news.download()
 news.parse()
-text = summarize(news.text, ratio=0.4)
+text = summarize(news.text, ratio=0.2)
 print("=====")
 print(text)
 print("=====")
