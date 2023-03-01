@@ -47,7 +47,7 @@ def getCategory():
 
 def postWrite(content):
         #오늘 날짜 가져오기
-        title = '['+datetime.today().strftime('%Y-%m-%d')+'] 매일경제 뉴스 요약'
+        title = '['+datetime.today().strftime('%Y-%m-%d')+'] 오늘 아침 뉴스 요약'
         url = 'https://www.tistory.com/apis/post/write?'
         data = {
                  'access_token': access_token,
@@ -97,7 +97,8 @@ if __name__ == '__main__':
         html = requests.get(i).text
         soup = BeautifulSoup(html, 'html.parser')
         title = soup.select_one('#container h2').get_text()
-        contents += '<b>'
+        contents += '[##_Image|kage@bfFbIP/btr1lvZmULU/vKPvGCf3blOhbdGR8o8zO0/img.png|alignCenter|width="1284" height="705" data-origin-width="1284" data-origin-height="705" data-ke-mobilestyle="widthOrigin" filename="img.png" filemime="image/png"|||_##]'
+        contents += '<br><br><b>'
         contents += title
         contents += "</b><br>"
         print(contents)

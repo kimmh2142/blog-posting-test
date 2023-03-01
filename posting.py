@@ -70,7 +70,7 @@ def auto_posting():
         # getCategory()  #최초 카테고리 확인시에만 수행
 
         contents = ""
-        driver = webdriver.Chrome("C://chromedriver.exe")
+        driver = webdriver.Chrome("C://chromedriver_win32/chromedriver.exe")
         driver.get("https://www.mk.co.kr/")
         time.sleep(2)
 
@@ -119,11 +119,3 @@ def auto_posting():
             time.sleep(2)
 
         postWrite(contents)
-
-
-schedule.every().day.at("10:00").do(auto_posting)
-
-# 무한 루프를 돌면서 스케쥴을 유지한다.
-while True:
-    schedule.run_pending()
-    time.sleep(1)
