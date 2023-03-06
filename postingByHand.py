@@ -68,7 +68,8 @@ if __name__ == '__main__':
     # getToken()    #최초 토큰 발급시에만 수행nn
     # getCategory()  #최초 카테고리 확인시에만 수행
 
-    contents = ""
+    contents = '[##_Image|kage@bfFbIP/btr1lvZmULU/vKPvGCf3blOhbdGR8o8zO0/img.png|alignCenter|width="1284" height="705" data-origin-width="1284" data-origin-height="705" data-ke-mobilestyle="widthOrigin" filename="img.png" filemime="image/png"|||_##]'
+
     driver = webdriver.Chrome("C://chromedriver.exe")
     driver.get("https://www.mk.co.kr/")
     time.sleep(2)
@@ -97,7 +98,6 @@ if __name__ == '__main__':
         html = requests.get(i).text
         soup = BeautifulSoup(html, 'html.parser')
         title = soup.select_one('#container h2').get_text()
-        contents += '[##_Image|kage@bfFbIP/btr1lvZmULU/vKPvGCf3blOhbdGR8o8zO0/img.png|alignCenter|width="1284" height="705" data-origin-width="1284" data-origin-height="705" data-ke-mobilestyle="widthOrigin" filename="img.png" filemime="image/png"|||_##]'
         contents += '<br><br><b>'
         contents += title
         contents += "</b><br>"
